@@ -5,7 +5,7 @@ int main(void)
 	const double PHI = 3.14;
 	double r = 4.38;
 
-	printf("¹İÁö¸§ÀÌ %fÀÎ ±¸ÀÇ Ã¼ÀûÀº %7.2fÀÔ´Ï´Ù.\n\a\a\a", r, 4 * PHI * r * r * r / 3);
-
+	printf("ë°˜ì§€ë¦„ì´ %fì¸ êµ¬ì˜ ì²´ì ì€ %7.2fì…ë‹ˆë‹¤.\n\a\a\a", r, 4 * PHI * r * r * r / 3);
+ 
 	return 0;
 }

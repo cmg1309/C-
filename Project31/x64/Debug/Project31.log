@@ -1,0 +1,12 @@
+﻿  소스.c
+C:\Users\cmg1309\source\repos\Project31\소스.c(174,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+C:\Users\cmg1309\source\repos\Project31\소스.c(174,9): message : 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+C:\Users\cmg1309\source\repos\Project31\소스.c(176,9): warning C4477: 'printf' : 서식 문자열 '%u'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'list *'입니다.
+C:\Users\cmg1309\source\repos\Project31\소스.c(176,9): warning C4313: 'printf': 서식 문자열의 '%u'이(가) list *' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\cmg1309\source\repos\Project31\소스.c(178,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'selfref *'입니다.
+C:\Users\cmg1309\source\repos\Project31\소스.c(178,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) selfref *' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\cmg1309\source\repos\Project31\소스.c(182,9): warning C4477: 'printf' : 서식 문자열 '%u'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'list *'입니다.
+C:\Users\cmg1309\source\repos\Project31\소스.c(182,9): warning C4313: 'printf': 서식 문자열의 '%u'이(가) list *' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\cmg1309\source\repos\Project31\소스.c(184,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'selfref *'입니다.
+C:\Users\cmg1309\source\repos\Project31\소스.c(184,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) selfref *' 형식의 인수 1과(와) 충돌합니다.
+  Project31.vcxproj -> C:\Users\cmg1309\source\repos\Project31\x64\Debug\Project31.exe

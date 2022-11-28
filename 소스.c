@@ -1,237 +1,177 @@
 //#include<stdio.h>
 //
-//int main(void)
-//{
-//	for (int i = 0; i < 5; i++) 
-//	{
-//		printf("*****\n");
-//	}
-// return 0;
-//}
-
-//#include<stdio.h>
+//int ctof(int c); //함수원형
 //
 //int main(void)
 //{
-//	int i = 2;
-//	for ( ; i <= 10; )
-//	{
-//		printf("%d\n", i);
-//		i += 2;
-//	}
-//	return 0;
-//}
-
-//#include<stdio.h>
-//
-//int main(void)
-//{
-//	int i = 1;
-//
-//	printf(" i 제곱 세제곱\n");
-//	printf("---------------\n");
-//
-//	for (i = 1; 1 <= 10; i++)
-//	{
-//		printf("%2d %4d %7d\n", i, i * 1, i * i * i);
-//	}
-//	return 0;
-//}
-
-//#include<stdio.h>
-//
-//int main(void)
-//{
-//	int i = 1, sum = 0;
-//
-//	for (i = 1, sum = 0; i <= 10; ) {
-//		sum += i++;
-//		printf("1에서 10까지 합: %3d\n", sum);
-//	}
-//	for (i = 0, sum = 0; i <= 9; ) {
-//		sum += ++i;
-//		printf("1에서 10까지 합: %3d\n", sum);
-//	}
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//
-//int main(void)
-//{
-//	int i = 1, sum = 0, max = 10;
-//
-//	while (i <= max)
-//		sum += i++;
-//
-//	printf("1에서 %d까지 합: %d\n", max, sum);
-//
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//
-//int main(void)
-//{
-//	int i = 0;
-//
-//	for (i = 0; i <= 200; i = i + 20) {
-//		
-//		printf("섭씨온도 : %3d = 화씨온도 : %3d\n", i, (int)((9.0 / 5.0) * i) + 32);
-//	}
-//	return 0;
-//}
-
-//#include<stdio.h>
-//
-//int main(void)
-//{
-//	int i = -60;
-//
-//	for (i = -60; i <= 140; i = i + 20) {
-//
-//		printf("섭씨온도 : %3d = 화씨온도 : %3d\n", i, (int)((9.0 / 5.0) * i) + 32);
-//	}
-//	return 0;
-//}
-
-//#include<stdio.h>
-//
-//int main(void)
-//{
-//	int n = 0, i = 1;
-//
-//	printf("출력하고싶은 단 :");
-//	scanf_s("%d", &n);
-//
-//	while (i <= 9) {
-//		printf("%d * %d = %d\n", n, i, n * i);
-//		i++;
-//	}
-//	return 0;
-//}
-
-//#include<stdio.h>
-//
-//int main(void)
-//{
-//	int input = 0;
-//
-//	do 
-//	{
-//		printf("양의 정수 또는 0(종료)을 입력: ");
-//		scanf_s("%d", &input);
-//
-//		if (input > 0)
-//		{
-//			int sum = 0, i = 0;
-//
-//			for (i = 1; i <= input; i++)
-//				sum = sum + i;
-//			printf("1에서 %d까지 합 : %d\n", input, sum);
-//		}
-//		else if (input < 0)
-//		{
-//			int sum = 0, i = 0;
-//
-//			for (i = -1; i >= input; i--)
-//				sum = sum + i;
-//			printf("-1에서 %d까지 합 : %d\n", input, sum);
-//		}
-//	} while (input = 0);
-//
-//	puts("종료합니다.");
-//
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//
-//int main(void)
-//{
-//	const double rate = 0.045;
-//	double origin = 1000000, total = 0;
-//	int i = 0;
-//
-//	for (i = 1; i <= 10; i++)
-//	{
-//		total = origin * (1 + rate * i);
-//		printf("%2d년 총 금액: %.2f\n", i, total);
-//	}
-//	return 0;
-//}
-
-
-//#include<stdio.h>
-//
-//int main(void)
-//{
-//	double origin = 0, total = 0, rate = 0;
-//	int i = 0, year = 0, op = 0;
-//
-//	printf("원금, 이율, 기간(년)을 입력\n");
-//	printf("원금 : ");
-//	scanf_s("%lf", &origin);
-//	printf("이율 : ");
-//	scanf_s("%lf", &rate);
-//	printf("기간(년) : ");
-//	scanf_s("%d", &year);
-//
-//	printf("\n=======================\n");
-//	printf("연도       원리금\n");
-//	printf("=======================\n");
+//	int c = 0;
 //	
-//	total = origin;
-//	rate /= 100.0;
-//
-//	for (i = 0; i < year; i++)
-//	{
-//		total = total * (1 + rate * i);
-//		printf("%2d       %10.1lf\n", i+1, total);
-//	}
-//
-//	printf("=======================\n");
+//	for (c = 0; c <= 200; c++)
+//		printf("삽씨온도 : %3d = 화씨온도 : %3d\n", c, ctof(c)); //함수호출
 //
 //	return 0;
 //}
-
-
-//실습예제 209p 11번 for문
-
+//
+//int ctof(int c)
+//{
+//	return (int)(9.0 / 5.0)* c + 32;
+//}
 
 //#include<stdio.h>
+//#define PI 3.14
+//
+//double area(double r);
+//double cir(double r);
 //
 //int main(void)
 //{
-//	int origin = 1000000, i = 0;
-//	double rate = 0.045, total = 0;
+//	double r = 0;
 //
-//	for (i = 1; i <= 10; i++)
-//	{
-//		total = origin * (1 + rate * i);
-//		printf("%2d년 총 금액 = %lf\n", i, total);
-//	}
+//	printf("원의 반지름 입력:");
+//	scanf_s("%lf", &r);
+//	printf("반지름이 %f인 원의 면적: %.3f", r, area(r));
+//	printf("\n반지름이 %f인 원의 둘레: %.3f", r, cir(r));
+//
+//	return 0;
+//}
+//
+//double area(double r)
+//{
+//	return (double)(PI * r * r);
+//}
+//
+//double cir(double r)
+//{
+//	return (double)(2 * PI * r);
+//}
+
+// 실습예제 6-2 확장
+//#include<stdio.h>
+//
+//int add2(int a, int b);
+//int findmax2(int a, int b);
+//int findmin(int n, int m);
+//void printmin(int a, int b);
+//
+//int main(void)
+//{
+//	int a = 0, b = 0, max = 0, sum = 0;
+//
+//	printf("두 정수 입력:");
+//	scanf_s("%d%d", &a, &b);
+//
+//	sum = add2(a, b);
+//	max = findmax2(a, b);
+//
+//	printf("최대 : %d\n", max);
+//	printf("합 : %d\n", sum);
+//	printmin(a, b);
+//	puts("");
+//
+//	return 0;
+//}
+//
+//int add2(int a, int b)
+//{
+//	int sum = a + b;
+//
+//	return sum;
+//}
+//
+//int findmax2(int a, int b)
+//{
+//	int max = a > b ? a : b;
+//	
+//	return max;
+//}
+//
+//int findmin(int n, int m)
+//{
+//	int min = n > m ? m : n;
+//
+//	return min;
+//}
+//
+//void printmin(int a, int b)
+//{
+//	int min = findmin(a, b);
+//	printf("최소 : %d\n", min);
+//
 //	return 0;
 //}
 
+//#include<stdio.h>
+//#include<stdlib.h>
+//#include<time.h>
+//
+//#define MAX 100
+//
+//int main(void)
+//{
+//	int i = 0, number = 0;
+//
+//	srand((int)time(NULL));
+//	printf("0 ~ %5d 사이의 난수 5개 : rand()\n", MAX);
+//	for (i = 0; i < 5; i++)
+//	{
+//		number = rand() % MAX + 1;
+//		printf("%5d ", number);
+//	}
+//	puts("");
+//
+//	return 0;
+//}
 
-//실습예제 209p 11번 while문
+// /*프로그래밍 연습 1번*/
+//#include<stdio.h>
+//
+//double inchtocenti(double x);                                // 함수원형 double 생략가능
+//
+//int main(void)
+//{
+//	double x = 0, n = 0;
+//
+//	printf("거리를 인치로 입력하세요. -> ");
+//	scanf_s("%lf", &x);
+//	
+//	n = inchtocenti(x);                                      // n 대신 inchtocenti(x) 를 넣으면 생략
+//	printf("\n입력한 %lf인치는 %lf센치미터이다.\n", x, n);   // n 대신 inchtocenti(x) 를 넣어도 가능
+//
+//	return 0;
+//}
+//
+//double inchtocenti(double x)                                 // 함수정의, 타입은 double
+//{
+//	return (double) x * 2.54;                                // 리턴값은 x * 2.54, 타입은 double
+//}
 
+// 프로그래밍 연습 2번
 #include<stdio.h>
+
+int intpow(int m, int n);                                           // 함수원형, intpow(m, n) -> int는 생략가능
 
 int main(void)
 {
-	int origin = 1000000, i = 1;
-	double rate = 0.045, total = 0;
+	int n = 0, m = 0;
 
-	while (i <= 10)
-	{
-		total = origin * (1 + rate * i);
-		printf("%2d년 총 금액 = %lf\n", i, total);
-		i++;
-	}
+	printf("정수 m을 n번 제곱합니다.\n");
+	printf("\n정수 m입력 -> ");
+	scanf_s("%d", &m);
+	printf("정수 n입력 -> ");
+	scanf_s("%d", &n);
+
+	printf("\n%d의 %d 제곱은 %d 입니다.", m, n, intpow(m, n));      // intpow() 함수호출
+
 	return 0;
+}
+
+int intpow(int m, int n)                                            // 함수 정의, 타입은 int
+{
+	int i = 1, result = 1;
+
+	for (i = 1; i <= n; i++)
+	{
+		result = result * m;
+	}
+	return result;                                                  // 리턴값으로 result를 받음
 }

@@ -1,0 +1,55 @@
+CREATE TABLE 도서 (
+	도서번호     VARCHAR(20)  NOT NULL,
+	도서명        VARCHAR(20)  NOT NULL,
+	장르	    VARCHAR(20)      NOT NULL,
+	저자	    VARCHAR(20)	  NOT NULL,
+	수량	    INT  NOT NULL,
+	PRIMARY KEY(도서번호)
+);
+
+CREATE TABLE 음식 (
+	  제품번호	VARCHAR(20)	NOT NULL,
+              음식명		VARCHAR(20)	NOT NULL,
+              가격		INT		NOT NULL,
+              종류		VARCHAR(20)	NOT NULL,
+	  수량		INT		NOT NULL,
+	PRIMARY KEY(제품번호)
+);
+
+CREATE TABLE 회원 (
+        	회원번호         VARCHAR(20)  NOT NULL,
+             이름               VARCHAR(20)  NOT NULL,
+             주소	        VARCHAR(20)  NOT NULL,
+             전화번호	        VARCHAR(20)  NOT NULL,
+  	 이메일            VARCHAR(20)  NOT NULL,
+             등급	        VARCHAR(20)  NOT NULL,
+             유지기간	        VARCHAR(20)  NOT NULL,
+             객실번호         INT  NOT NULL, 
+             PRIMARY KEY(회원번호),
+             FOREIGN KEY(객실번호)   REFERENCES   객실(객실번호)
+);
+
+CREATE TABLE 도서이용 (
+            회원번호     VARCHAR(20)  NOT NULL,
+            도서번호	    VARCHAR(20)  NOT NULL,
+            이용날짜	    VARCHAR(20)  NOT NULL,
+            PRIMARY KEY(회원번호, 도서번호, 이용날짜),
+            FOREIGN KEY(회원번호)   REFERENCES   회원(회원번호),
+            FOREIGN KEY(도서번호)      REFERENCES   도서(도서번호)
+);
+
+CREATE TABLE 음식주문 (
+	주문번호         VARCHAR(20)  NOT NULL,
+            회원번호	       VARCHAR(20)   NOT NULL,
+            제품번호	       VARCHAR(20)  NOT NULL,
+            총결제금액       INT  NOT NULL,
+            PRIMARY KEY(회원번호, 제품번호, 주문번호),
+            FOREIGN KEY(회원번호)   REFERENCES   회원(회원번호),
+	FOREIGN KEY(제품번호)     REFERENCES   음식(제품번호)
+);
+
+CREATE TABLE 객실(
+	 객실번호  INT  NOT NULL,
+             이용시간  INT  NOT NULL,
+             PRIMARY KEY(객실번호)
+);

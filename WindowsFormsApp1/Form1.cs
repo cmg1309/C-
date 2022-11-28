@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            button2.SendToBack();
+            button2.SendToBack(); 
         }
     }
 }

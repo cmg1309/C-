@@ -1,37 +1,71 @@
-//// type char  1,2 가 아닌 숫자는 잘못된 숫자
-//
-//#define _CRT_SECURE_NO_WARNINGS                      // 첫행에 와야함
 //#include<stdio.h>
 //
 //int main(void)
 //{
-//	int point = 0;
-//	char type = 0;
-//	// 정수나 실수, 문자를 입력 받은 후에 두번째 scanf_s 에서 문자형태의 데이터를 입력받으면 저장하지 못하고 넘어감.
-//	printf("필기시험점수 입력:");
-//	scanf_s("%d", &point);                           // enter키 = '\n'  
-//	//getchar();  -> 첫번째 해결법
-//	printf("번호를 선택: 1(1종먼허 ),2(2종먼허):");
-//	scanf("\n%c", &type, 1);                         // 두번째 해결법 : %c 앞에 \n을 넣음
+//	for (int i = 0; i < 5; i++) 
+//	{
+//		printf("*****\n");
+//	}
+// return 0;
+//}
+
+//#include<stdio.h>
 //
-//	if (type == '1')
+//int main(void)
+//{
+//	int i = 2;
+//	for ( ; i <= 10; )
 //	{
-//		if (point >= 70)
-//			printf("1종 면허 합격");
-//		else
-//			printf("1종 면허 불합격");
+//		printf("%d\n", i);
+//		i += 2;
 //	}
-//	else if (type == '2')                           // type 1 2 가 아닌게 있어서 else를 붙히는게 좋음
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main(void)
+//{
+//	int i = 1;
+//
+//	printf(" i 제곱 세제곱\n");
+//	printf("---------------\n");
+//
+//	for (i = 1; 1 <= 10; i++)
 //	{
-//		if (point >= 60)
-//			printf("2종 면허 합격");
-//		else
-//			printf("2종 면허 불합격");
+//		printf("%2d %4d %7d\n", i, i * 1, i * i * i);
 //	}
-//	else
-//	{
-//		printf("잘못된 숫자 입니다.\n");
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main(void)
+//{
+//	int i = 1, sum = 0;
+//
+//	for (i = 1, sum = 0; i <= 10; ) {
+//		sum += i++;
+//		printf("1에서 10까지 합: %3d\n", sum);
 //	}
+//	for (i = 0, sum = 0; i <= 9; ) {
+//		sum += ++i;
+//		printf("1에서 10까지 합: %3d\n", sum);
+//	}
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main(void)
+//{
+//	int i = 1, sum = 0, max = 10;
+//
+//	while (i <= max)
+//		sum += i++;
+//
+//	printf("1에서 %d까지 합: %d\n", max, sum);
 //
 //	return 0;
 //}
@@ -41,32 +75,76 @@
 //
 //int main(void)
 //{
-//	double n1 = 0, n2 = 0, n3 = 0;
-//	double result = 0;
+//	int i = 0;
 //
-//	printf("성적입력:");
-//	scanf_s("%lf %lf %lf", &n1, &n2, &n3);
+//	for (i = 0; i <= 200; i = i + 20) {
+//		
+//		printf("섭씨온도 : %3d = 화씨온도 : %3d\n", i, (int)((9.0 / 5.0) * i) + 32);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
 //
-//	if ((a < 0 || a > 0) || (b < 0 || b > 100) || (c < 0 || c > 100))
-//	{
-//		printf("성적은 0~100점까지만 입력가능합니다.\n\n");
-//		return 0;
-//	}
+//int main(void)
+//{
+//	int i = -60;
 //
-//	result = (n1 + n2 + n3) / 3;
+//	for (i = -60; i <= 140; i = i + 20) {
 //
-//	if (result > 90) 
-//	{
-//		printf("평균: %7.2f\n 평점 A는 전액장학금이 지급됩니다.\n\n", result);
+//		printf("섭씨온도 : %3d = 화씨온도 : %3d\n", i, (int)((9.0 / 5.0) * i) + 32);
 //	}
-//	else if (result > 80) 
-//	{
-//		printf("평균: %7.2f\n 평점 B는 전액장학금이 지급됩니다.\n\n", result);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main(void)
+//{
+//	int n = 0, i = 1;
+//
+//	printf("출력하고싶은 단 :");
+//	scanf_s("%d", &n);
+//
+//	while (i <= 9) {
+//		printf("%d * %d = %d\n", n, i, n * i);
+//		i++;
 //	}
-//	else 
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main(void)
+//{
+//	int input = 0;
+//
+//	do 
 //	{
-//		printf("평균: %7.2f는 장학금을 받을 수 없습니다.\n\n", result);
-//	}
+//		printf("양의 정수 또는 0(종료)을 입력: ");
+//		scanf_s("%d", &input);
+//
+//		if (input > 0)
+//		{
+//			int sum = 0, i = 0;
+//
+//			for (i = 1; i <= input; i++)
+//				sum = sum + i;
+//			printf("1에서 %d까지 합 : %d\n", input, sum);
+//		}
+//		else if (input < 0)
+//		{
+//			int sum = 0, i = 0;
+//
+//			for (i = -1; i >= input; i--)
+//				sum = sum + i;
+//			printf("-1에서 %d까지 합 : %d\n", input, sum);
+//		}
+//	} while (input = 0);
+//
+//	puts("종료합니다.");
+//
+//	return 0;
 //}
 
 
@@ -74,46 +152,86 @@
 //
 //int main(void)
 //{
-//	double n1 = 0, n2 = 0, n3 = 0, result = 0;
-//	int con = 0;
+//	const double rate = 0.045;
+//	double origin = 1000000, total = 0;
+//	int i = 0;
 //
-//	printf("성적입력:");
-//	scanf_s("%f %f %f", &n1, &n2, &n3);
-//	if ((a < 0 || a > 0) || (b < 0 || b > 100) || (c < 0 || c > 100))
+//	for (i = 1; i <= 10; i++)
 //	{
-//		printf("성적은 0~100점까지만 입력가능합니다.\n\n");
-//		return 0;
+//		total = origin * (1 + rate * i);
+//		printf("%2d년 총 금액: %.2f\n", i, total);
 //	}
-//	con = (int)result / 10;
-//
-//	switch (con)
-//	{
-//	case 9:, case 10:
-//		printf("평균: %7.2f\n 평점 A는 전액장학금이 지급됩니다.\n\n", result);
-//		break;
-//	case 8:
-//		printf("평균: %7.2f\n 평점 B는 전액장학금이 지급됩니다.\n\n", result);
-//		break;
-//	default:
-//		printf("평균: %7.2f는 장학금을 받을 수 없습니다.\n\n", result);
-//	}
+//	return 0;
 //}
 
 
-// 두 정수를 입력 받아 앞의 정수가 크면 두 수를 더하고, 뒤의 정수가 크거나 같으면 두 수를 곱하여 결과를 출력하는 프로그램을 작성
+//#include<stdio.h>
+//
+//int main(void)
+//{
+//	double origin = 0, total = 0, rate = 0;
+//	int i = 0, year = 0, op = 0;
+//
+//	printf("원금, 이율, 기간(년)을 입력\n");
+//	printf("원금 : ");
+//	scanf_s("%lf", &origin);
+//	printf("이율 : ");
+//	scanf_s("%lf", &rate);
+//	printf("기간(년) : ");
+//	scanf_s("%d", &year);
+//
+//	printf("\n=======================\n");
+//	printf("연도       원리금\n");
+//	printf("=======================\n");
+//	
+//	total = origin;
+//	rate /= 100.0;
+//
+//	for (i = 0; i < year; i++)
+//	{
+//		total = total * (1 + rate * i);
+//		printf("%2d       %10.1lf\n", i+1, total);
+//	}
+//
+//	printf("=======================\n");
+//
+//	return 0;
+//}
+
+
+//실습예제 209p 11번 for문
+
+
+//#include<stdio.h>
+//
+//int main(void)
+//{
+//	int origin = 1000000, i = 0;
+//	double rate = 0.045, total = 0;
+//
+//	for (i = 1; i <= 10; i++)
+//	{
+//		total = origin * (1 + rate * i);
+//		printf("%2d년 총 금액 = %lf\n", i, total);
+//	}
+//	return 0;
+//}
+
+
+//실습예제 209p 11번 while문
 
 #include<stdio.h>
 
 int main(void)
 {
-	signed int x = 0, y = 0;
+	int origin = 1000000, i = 1;
+	double rate = 0.045, total = 0;
 
-	printf("두 정수 입력:");
-	scanf_s("%d %d", &x, &y);
-
-	if (x > y)
-		printf("더한 결과 값:%d + %d = %d\n", x, y, x + y);
-	else
-		printf("곱한 결과 값:%d * %d = %d\n", x, y, x * y);
+	while (i <= 10)
+	{
+		total = origin * (1 + rate * i);
+		printf("%2d년 총 금액 = %lf\n", i, total);
+		i++;
+	}
 	return 0;
 }

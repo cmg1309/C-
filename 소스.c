@@ -1,248 +1,234 @@
-// 실습예제 7-3
+// 성적관리 프로그램
+//
 //#include<stdio.h>
 //
-//#define ROWSIZE 2
-//#define COLSIZE 3
+//void input(int score[5][2]);										// 입력값 함수원형
+//int sum(int score[5][2], int tot[2]);								// 총합을 구하는 함수원형
+//void output(int score[5][2], int tot[2]);							// 출력값 함수원형
 //
 //int main(void)
 //{
 //	int i = 0, j = 0;
-//	int sum = 0;
+//	int score[5][2] = { 0 };
+//	int tot[2] = { 0 };
 //
-//	int td[ROWSIZE][COLSIZE] = { 0 };
+//	//printf("각 학생의 영어 점수와 수학 점수를 입력하세요.\n");	// 입력하는 부분의 for문
+//	//for (i = 0; i < 5; i++)
+//	//{
+//	//	for (j = 0; j < 2; j++)
+//	//	{
+//	//		if(j==0)
+//	//		{
+//	//			printf("%d번 학생의 영어 점수 : ", i + 1);			// j(열)이 0열이면 입력됨 출력되는 값 시작이 1이기때문에 i에 +1 을 해줌
+//	//			scanf_s("%d", &score[i][j]);
+//	//		}
+//	//		else
+//	//		{
+//	//			printf("%d번 학생의 수학 점수 : ", i + 1);			// j(열)이 0열이 아니면 입력됨
+//	//			scanf_s("%d", &score[i][j]);
+//	//		}
+//	//	}
+//	//}
+//	input(score);													// 입력값 함수호출
 //
-//	printf("6개의 데이터 입력 : ");
-//	for (i = 0; i < ROWSIZE; i++)
-//	{
-//		for (j = 0; j < COLSIZE; j++)
-//			scanf_s("%d", &td[i][j]);
-//	}
+//	//for (i = 0; i < 5; i++)										// 총합을 구하는 부분의 for문
+//	//{
+//	//	for (j = 0; j < 2; j++)
+//	//	{
+//	//		if (j == 0)												// j(열)이 0열이면 0열에 입력된 값 합을 구함
+//	//		{
+//	//			tot[j] = tot[j] + score[i][j];
+//	//		}
+//	//		else													// j(열)이 0열이 아니면 1열에 입력된 값 합을 구함
+//	//		{
+//	//			tot[j] = tot[j] + score[i][j];
+//	//		}
+//	//	}
+//	//}
+//	sum(score, tot);												// 총합을 구하는 함수호출
 //
-//	for (i = 0; i < ROWSIZE; i++)
-//	{
-//		for (j = 0; j < COLSIZE; j++)
-//			sum += td[i][j];
-//	}
-//	printf("합 : %d, 평균 : %lf\n", sum, (double)sum / (double)(ROWSIZE * COLSIZE));
+//	//printf("==============================\n");
+//	//printf("학생번호   영어점수   수학점수\n");
+//	//printf("==============================\n");
 //
-//	printf("반복문 for를 이용하여 출력\n");
-//	for (i = 0; i < ROWSIZE; i++)
-//	{
-//		for (j = 0; j < COLSIZE; j++)
-//			printf("%d ", td[i][j]);
-//		printf("\n");
-//	}
+//	//for (i = 0; i < 5; i++)										// 출력값 구하는 부분의 for문
+//	//{
+//	//	printf("   %d", i + 1);
+//	//	for (j = 0; j < 2; j++)
+//	//	{
+//	//		printf("%12d", score[i][j]);							// 5행 2열에 맞게 입력된 값을 출력해줌
+//	//	}
+//	//	puts("");
+//	//}
+//
+//	//printf("==============================\n");
+//	//printf("총점 %11d %11d\n", tot[0], tot[1]);					// 0열과 1열에 입력된 값을 열에 따라 합을 구함
+//	//printf("평균 %11.2lf %11.2lf\n", tot[0] / 5.0, tot[1] / 5.0);	// 0열과 1열에 입력된 값을 열에 따라 평균을 구함
+//	output(score, tot);												// 출력값 함수호출
+//
 //	return 0;
 //}
-
-// 실습예제 7-3 확장문제
-//#include<stdio.h>
 //
-//int tot(int data[2][3], int ROWSIZE, int COLSIZE);
-//void output(int data[2][3], int ROWSIZE, int COLSIZE);
-//void input(int data[2][3], int ROWSIZE, int COLSIZE);
-//
-//int main(void)
-//{
-//	int i = 0, j = 0, sum = 0, ROWSIZE = 0, COLSIZE = 0;
-//
-//	int data[2][3] = { 0 };
-//	printf("6개의 데이터 입력 : ");
-//	ROWSIZE = sizeof(data) / sizeof(data[0]);
-//	COLSIZE = sizeof(data[0]) / sizeof(data[0][0]);
-//
-//	input(data, ROWSIZE, COLSIZE);
-//	sum = tot(data, ROWSIZE, COLSIZE);
-//	printf("합: %d, 평균: %f\n", sum, (double)sum / ((double)ROWSIZE * COLSIZE));
-//	printf("반복문 for를 이용하여 출력\n");
-//	output(data, ROWSIZE, COLSIZE);
-//
-//	return 0;
-//}
-//
-//void input(int data[2][3], int ROWSIZE, int COLSIZE)
+//void input(int score[5][2])											// 입력값 함수정의
 //{
 //	int i = 0, j = 0;
-//	for (i = 0; i < ROWSIZE; i++)
-//		for (j = 0; j < COLSIZE; j++)
-//			scanf_s("%d", &data[i][j]);
-//}
-//
-//void output(int data[2][3], int ROWSIZE, int COLSIZE)
-//{
-//	int i = 0, j = 0;
-//	for (i = 0; i < ROWSIZE; i++)
+//	printf("각 학생의 영어 점수와 수학 점수를 입력하세요.\n");
+//	for (i = 0; i < 5; i++)
 //	{
-//		for (j = 0; j < COLSIZE; j++)
+//		for (j = 0; j < 2; j++)
 //		{
-//			printf("%d ", data[i][j]);
+//			if (j == 0)
+//			{
+//				printf("%d번 학생의 영어 점수 : ", i + 1);
+//				scanf_s("%d", &score[i][j]);
+//			}
+//			else
+//			{
+//				printf("%d번 학생의 수학 점수 : ", i + 1);
+//				scanf_s("%d", &score[i][j]);
+//			}
+//		}
+//	}
+//}
+//
+//int sum(int score[5][2], int tot[2])								// 총합을 구하는 함수정의
+//{
+//	int i = 0, j = 0;
+//
+//	for (i = 0; i < 5; i++)
+//	{
+//		for (j = 0; j < 2; j++)
+//		{
+//			if (j == 0)
+//			{
+//				tot[j] = tot[j] + score[i][j];
+//			}
+//			else
+//			{
+//				tot[j] = tot[j] + score[i][j];
+//			}
+//		}
+//	}
+//}
+//
+//void output(int score[5][2], int tot[2])							// 출력값을 구하는 함수정의
+//{
+//	int i = 0, j = 0;
+//	printf("==============================\n");
+//	printf("학생번호   영어점수   수학점수\n");
+//	printf("==============================\n");
+//
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("   %d", i + 1);
+//		for (j = 0; j < 2; j++)
+//		{
+//			printf("%12d", score[i][j]);
 //		}
 //		puts("");
 //	}
-//}
 //
-//int tot(int data[2][3], int ROWSIZE, int COLSIZE)
-//{
-//	int i = 0, j = 0;
-//	int sum = 0;
-//	for (i = 0; i < ROWSIZE; i++)
-//		for (j = 0; j < COLSIZE; j++)
-//			sum += data[i][j];
-//	return sum;
+//	printf("==============================\n");
+//	printf("총점 %11d %11d\n", tot[0], tot[1]);
+//	printf("평균 %11.2lf %11.2lf\n", tot[0] / 5.0, tot[1] / 5.0);
 //}
 
-// 실습예제 7-5
-//#include<stdio.h>                
+// 난수 입력하여 최대 최소 구하기
+
+//#include<stdio.h>
+//#include<stdlib.h>
 //
-//#define ROWSIZE 4
-//#define COLSIZE 2
-//
-//void input(int score[ROWSIZE][COLSIZE]);
-//void output(int score[ROWSIZE][COLSIZE], int sum, int midsum, int finalsum);
+//void output(int score[10][3]);							// 출력값 함수원형
 //
 //int main(void)
 //{
-//	int i = 0, j = 0, sum = 0, midsum = 0, finalsum = 0;
+//	int i = 0, j = 0;
+//	int max = 0, min = 0, sum = 0;
+//	int score[10][3] = { 0 };							// 10행 3열 배열
 //
-//	int score[ROWSIZE][COLSIZE] = { 0 };
+//	printf("학번   시험1   시험2   시험3\n");
+//	printf("==============================\n");
 //
-//	printf("중간, 기말 성적을 입력하세요: ");
-//	for (i = 0; i < ROWSIZE; i++)
-//		for (j = 0; j < COLSIZE; j++)
-//			scanf_s("%d", &score[i][j]);
-//	input(score);
-//
-//	printf("       중간       기말     \n");
-//	printf("---------------------------\n");
-//	for (i = 0; i < ROWSIZE; i++)
+//	for (i = 0; i < 10; i++)
 //	{
-//		for (j = 0; j < COLSIZE; j++)
+//		for (j = 0; j < 3; j++)
 //		{
-//			printf("%10d", score[i][j]);
-//			sum += score[i][j];
-//			if (j == 0) midsum += score[i][j];
-//			else finalsum += score[i][j];
+//			score[i][j] = rand() % 100 + 1;				// 랜덤함수를 이용해 입력값을 랜덤으로 받음
+//		}
+//	}
+//
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%3d", i + 1);							// 학번 입력값
+//		for (j = 0; j < 3; j++)
+//		{
+//			printf("%8d", score[i][j]);					// 랜덤으로 입력되는 성적값
 //		}
 //		puts("");
 //	}
+//	printf("==============================\n");
 //
-//	printf("---------------------------\n");
-//	printf("\n평균: %7.2f %7.2f\n", (double)midsum / ROWSIZE, (double)finalsum / ROWSIZE);
-//	printf("성적의 합은 %d이고 평균은 %.2f이다\n", sum, (double)sum / (ROWSIZE * COLSIZE));
-//	output(score, sum, midsum, finalsum);
+//	//for (j = 0 ; j < 3; j++)
+//	//{
+//	//	min = max = score[0][j];
+//	//	for (i = 0; i < 10; i++)
+//	//	{
+//	//		if (score[i][j] < min)
+//	//			min = score[i][j];
+//	//		if (score[i][j] > max)
+//	//			max = score[i][j];
+//	//		sum = sum + score[i][j];
+//	//	}
+//	//	printf("시험 %d: 최대점수 = %d\n", j + 1, max);
+//	//	printf("시험 %d: 최소점수 = %d\n", j + 1, min);
+//	//}
+//	output(score);
 //
 //	return 0;
 //}
 //
-//void input(int score[ROWSIZE][COLSIZE])
+//void output(int score[10][3])
 //{
 //	int i = 0, j = 0;
-//	printf("중간, 기말 성적을 입력하세요: ");
-//	for (i = 0; i < ROWSIZE; i++)
-//		for (j = 0; j < COLSIZE; j++)
-//			scanf_s("%d", &score[i][j]);
-//}
-//
-//void output(int score[ROWSIZE][COLSIZE], int sum, int midsum, int finalsum)
-//{
-//	printf("---------------------------\n");
-//	printf("\n평균: %7.2f %7.2f\n", (double)midsum / ROWSIZE, (double)finalsum / ROWSIZE);
-//	printf("성적의 합은 %d이고 평균은 %.2f이다\n", sum, (double)sum / (ROWSIZE * COLSIZE));
-//}
-
-// 실습예제 7-6
-//#include<stdio.h>
-//
-//#define ARYSIZE 5
-//double sum(double ary[], int n);
-//void input(double data[]);
-//
-//int main(void)
-//{
-//	int i = 0, total = 0;
-//
-//	double data[ARYSIZE] = { 0 };
-//
-//	/*printf("5개의 데이터 입력 :");
-//	for (i = 0; i < ARYSIZE; i++)
-//		scanf_s("%lf", &data[i]);
-//	puts("");*/
-//	input(data);
-//
-//	for (i = 0; i < ARYSIZE; i++)
-//		printf("%5.1f", data[i]);
-//	puts("");
-//		
-//	printf("합 : %lf", sum(data, ARYSIZE));
-//}
-//
-//double sum(double ary[], int n)
-//{
-//	int i = 0;
-//	double total = 0;
-//
-//	for (i = 0; i < n; i++)
-//		total += ary[i];
-//
-//	return total;
-//}
-//
-//void input(double data[])
-//{
-//	int i = 0;
-//
-//	printf("5개의 데이터 입력 :");
-//	for (i = 0; i < ARYSIZE; i++)
-//		scanf_s("%lf", &data[i]);
-//	puts("");
+//	int min = 0, max = 0, sum = 0;
+//	for (j = 0; j < 3; j++)
+//	{
+//		min = max = score[0][j];
+//		for (i = 0; i < 10; i++)
+//		{
+//			if (score[i][j] < min)
+//				min = score[i][j];
+//			if (score[i][j] > max)
+//				max = score[i][j];
+//			sum = sum + score[i][j];
+//		}
+//		printf("시험 %d: 최대점수 = %d\n", j + 1, max);
+//		printf("시험 %d: 최소점수 = %d\n", j + 1, min);
+//	}
 //}
 
-// 실습예제 7-8
+// 빈도수 계산 프로그램
+
 #include<stdio.h>
-
-double readary(double data[], int n);
-double sum(double data[], int n);
-void printary(double data[], int n);
 
 int main(void)
 {
-	int i = 0;
-	double data[5] = { 0 };
+	int i = 0, score = 0;
+	int freq[101] = { 0 };							// 크기가 101인 배열
 
-	int arysize = sizeof(data) / sizeof(data[0]);
-
-	printf("실수 5개의 값을 입력하세요.\n");
-	readary(data, arysize);
-	printf("\n입력한 자료 값은 다음과 같습니다.\n");
-	printary(data, arysize);
-	printf("\n함수에서 구한 값은 %.3lf입니다.\n", sum(data, arysize));
-
-	return 0;
-}
-
-double readary(double data[], int n)
-{
-	int i = 0;
-	for (i = 0; i < n; i++)
+	while (1)
 	{
-		printf("data[%d] = ", i);
-		scanf_s("%lf", &data[i]);
+		printf("숫자를 입력하시오(종료-1) : ");
+		scanf_s("%d", &score);						// 숫자 입력
+		if (score < 0)								// 입력된 숫자가 0보다 작으면 종료 break
+			break;
+		freq[score]++;								// 입력된 값 빈도를 증가시킴
 	}
+
+	printf("값   빈도\n");
+
+	for (i = 0; i < 101; i++)
+		printf("%3d     %3d\n", i, freq[i]);
+
 	return 0;
-}
-
-double sum(double data[], int n)
-{
-	int i = 0;
-	double tot = 0;
-	for (i = 0; i < n; i++)
-		tot += data[i];
-	return tot;
-}
-
-void printary(double data[], int n)
-{
-	int i = 0;
-	for (i = 0; i < n; i++)
-		printf("data[%d] = %.2lf  ", i, data[i]);
 }

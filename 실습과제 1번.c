@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int main(void)
+int main(void) 
 {
 	double n1 = 0, n2 = 0;
 

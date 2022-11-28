@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	puts("20204083 Ã‚Ã·Â¹ÃŽÂ±Ã¢");
- 
-	return 0;  
+	puts("20204083 Â÷¹Î±â");
+
+	return 0;
 }
